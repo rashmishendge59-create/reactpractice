@@ -1,0 +1,32 @@
+{
+  "name": "reactpractice",
+  "version": "1.0.0",
+  "description": "practice",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rashmishendge59-create/reactpractice.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "-",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rashmishendge59-create/reactpractice/issues"
+  },
+  "homepage": "https://github.com/rashmishendge59-create/reactpractice#readme",
+  "devDependencies": {
+    "parcel": "^2.16.4"
+  },
+  "dependencies": {
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
+  },
+  "browserslist": [
+    "last 5 versions"
+  ]
+  
+}
