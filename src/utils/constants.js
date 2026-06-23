@@ -2,3 +2,4 @@ export const CDN_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_l
 
 export const LOGO_URL = "https://img.pikbest.com/png-images/20241111/-22creative-food-logo-collection-for-cafes-and-restaurants-22_11079877.png";
 
+export const MENU_API = "https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.57382&lng=73.7561594&restaurantId=";

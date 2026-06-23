@@ -4,7 +4,7 @@
   "description": "practice",
   "scripts": {
     "start": "parcel index.html",
-    "build":"parcel build index.html",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "repository": {
@@ -25,10 +25,10 @@
   },
   "dependencies": {
     "react": "^19.2.7",
-    "react-dom": "^19.2.7"
+    "react-dom": "^19.2.7",
+    "react-router-dom": "^6.30.4"
   },
   "browserslist": [
     "last 5 versions"
   ]
-  
 }

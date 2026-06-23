@@ -1,6 +1,7 @@
 import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
 
@@ -19,9 +20,6 @@ const Body = () => {
         setListOfFilteredRes (json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     }
 
-    if(listOfRestraurant.length === 0){
-        return <Shimmer />
-    }
     return (listOfRestraurant.length === 0) ? <Shimmer /> :
         (
         <div className="body">
@@ -45,7 +43,9 @@ const Body = () => {
             </div>
             <div className="res-container">
                 { filteredList.map((restraurant) => (
-                    <RestaurantCard key = {restraurant.info.id} resData = {restraurant.info} />
+                    <Link to={"/restraurant/"+restraurant.info.id} key={restraurant.info.id}>
+                        <RestaurantCard key = {restraurant.info.id} resData = {restraurant.info} />
+                    </Link>
                   ))}
             </div>
 
