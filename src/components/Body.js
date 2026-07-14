@@ -26,26 +26,31 @@ const Body = () => {
     if( onlineStatus == false ) return <h1>Oops! Looks like your are offline, check your internet</h1>
     return (listOfRestraurant.length === 0) ? <Shimmer /> :
         (
-        <div className="body">
-            <div className="filter">
+        <div className="">
+            <div className="flex justify-center">
 
-                <div className="search">
-                    <input type="text" value={searchText} onChange={(e)=>{
+                <div className="mt-2 p-4 justify-between">
+                    <input 
+                    className="w-[350px] h-10 border border-solid border-gray-400 rounded-md" 
+                    placeholder=" Type restraurant name here ..."
+                    type="text" 
+                    value={searchText} 
+                    onChange={(e)=>{
                         setSearchText(e.target.value)
                     }}></input>
-                    <button className="search-btn" onClick={()=>{
+                    <button className="px-8 py-2 bg-green-100 mx-4 rounded-lg hover:bg-gray-100" onClick={()=>{
                         const filteredList1 = listOfRestraurant.filter((res)=> res.info.name.toLowerCase().includes(searchText.toLowerCase()) )
 
                         setListOfFilteredRes(filteredList1);
                     }}> Search </button>
 
-                </div>
-                <button className="filter-btn" onClick={()=>{
+                <button className="px-8 py-2 bg-green-100 rounded-lg hover:bg-gray-100" onClick={()=>{
                     const filteredList2 = listOfRestraurant.filter((res)=> (res.info.avgRating > 4.2));
                     setListOfFilteredRes(filteredList2);    
                 }}>Top Rated Restraurant</button>
+                </div>
             </div>
-            <div className="res-container">
+            <div className="flex justify-center flex-wrap">
                 { filteredList.map((restraurant) => (
                     <Link to={"/restraurant/"+restraurant.info.id} key={restraurant.info.id}>
                         <RestaurantCard key = {restraurant.info.id} resData = {restraurant.info} />

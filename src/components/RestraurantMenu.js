@@ -22,7 +22,7 @@ const RestraurantMenu = () => {
               {cuisines.join(",")} - {costForTwoMessage}
             </p> 
             <h2>Menu</h2>
-            {(itemCards  !== null )? 
+            {(itemCards  == null ) ? (<div>Menu not Available</div>) :
             (<ul>
               {itemCards.map((items) => 
               (
@@ -30,7 +30,7 @@ const RestraurantMenu = () => {
 
               ))}
                
-            </ul>) : <div></div>}
+            </ul>) }
 
         </div>
     )
