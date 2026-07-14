@@ -30,10 +30,18 @@ class About extends React.Component {
     render(){
         console.log("Parent render called");
         return (
-            <div>
-                <h1>Our Team</h1>
-                <UserClass name = {"child 1"} email = {"child1@gmail.com"} location = {"Mumbai"}/>
-                <UserClass name = {"child 2"} email = {"child2@gmail.com"} location = {"pune"}/>
+            <div className="m-6">
+                <div className="flex justify-center mt-14 text-2xl font-extrabold underline">
+                    <h1>Our Team</h1>
+                </div>
+                <div className="flex justify-center flex-wrap ">
+                    <UserClass name = {"Employee 1"} email = {"child1@gmail.com"} location = {"Mumbai"}/>
+                    <UserClass name = {"Employee 2"} email = {"child2@gmail.com"} location = {"pune"}/>
+                    <UserClass name = {"Employee 3"} email = {"child1@gmail.com"} location = {"Mumbai"}/>
+                    <UserClass name = {"Employee 4"} email = {"child2@gmail.com"} location = {"pune"}/>
+                    <UserClass name = {"Employee 4"} email = {"child2@gmail.com"} location = {"pune"}/>
+                    <UserClass name = {"Employee 4"} email = {"child2@gmail.com"} location = {"pune"}/>
+                </div>
             </div>
         )
     }
