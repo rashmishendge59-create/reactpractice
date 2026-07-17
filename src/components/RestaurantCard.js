@@ -16,16 +16,21 @@ const RestaurantCard = (props) => {
 }
 
 export const OfferedRestraurantcard = ( RestaurantCard ) => {
-    return ((props) => {
+    return (props) => {
+        
+        const { header, subHeader } = props.resData?.aggregatedDiscountInfoV3 || {};
+        console.log(header, subHeader);
         return (
-            <div>
-                <label className="">Offer</label>
-                <RestaurantCard />
+            <div className="relative">
+                <label className="absolute bg-green-600 text-white p-2 rounded">
+                    {(header || "") +" "+(subHeader||"") } 
+                </label>
+                <RestaurantCard {...props} />
+                
                
             </div>
         )
     }
-    )
 }
 
 export default RestaurantCard;

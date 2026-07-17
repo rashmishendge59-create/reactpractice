@@ -1,8 +1,10 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { OfferedRestraurantcard, OfferedRestraurantcard } from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+
+const OfferRestraurantcard = OfferedRestraurantcard ( RestaurantCard );
 
 const Body = () => {
 
@@ -53,7 +55,10 @@ const Body = () => {
             <div className="flex justify-center flex-wrap">
                 { filteredList.map((restraurant) => (
                     <Link to={"/restraurant/"+restraurant.info.id} key={restraurant.info.id}>
-                        <RestaurantCard key = {restraurant.info.id} resData = {restraurant.info} />
+                        { restraurant.info.aggregatedDiscountInfoV3 ? 
+                        (<OfferRestraurantcard resData = {restraurant.info} />) :
+                        (<RestaurantCard resData = {restraurant.info} />) }
+                        
                     </Link>
                   ))}
             </div>
