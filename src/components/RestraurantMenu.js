@@ -21,7 +21,7 @@ const categories = resInfo?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards.
 return (resInfo  ==  null) ? <Shimmer /> : (
         <div className="menu">
           <div className="text-center ">
-              <h1 className="text-3xl font-bold my-4">{name} </h1>
+              <h1 className="text-2xl font-bold my-4">{name} </h1>
               <p className="text-xl font-semibold ">
                 {cuisines.join(",")} - {costForTwoMessage}
               </p> 
