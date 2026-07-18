@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useState ,useContext} from "react";
 import { CART_URL, LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Header = () => {
-
+    const {loggedInUser} = useContext(UserContext);
     const [ btnName, setBtnName] = useState("Login");
 
     const onlineStatus = useOnlineStatus();
@@ -23,8 +24,11 @@ const Header = () => {
                 <li className="px-5 py-2 hover:bg-gray-100 rounded-md font-medium"><Link to= "/contact">Contact Us</Link></li>
                 <li className="px-5 py-2 hover:bg-gray-100 rounded-md font-medium "><Link to= "/grocery">Grocery</Link></li>
                 <li className="px-5 py-2 hover:bg-gray-100 rounded-md "><img className= "w-7 " src={CART_URL}></img></li>
-                <button className="px-5 py-2 hover:bg-gray-100 font-bold rounded-md" onClick={()=>{ ( btnName == "Login" ) ? setBtnName("LogOut") : setBtnName("Login");
+                <button 
+                className="px-5 py-2 hover:bg-gray-100 font-bold rounded-md" 
+                onClick={()=>{ ( btnName == "Login" ) ? setBtnName("LogOut") : setBtnName("Login");
                 }}>{ btnName }</button>
+                <li className="px-5 py-2 hover:bg-gray-100 rounded-md font-medium ">{loggedInUser}</li>
             </ul>
 
         </div>
