@@ -1,11 +1,9 @@
 import { useState } from "react";
 import ItemList from "./ItemList";
 
-const RestraurantCategory = ({data}) => {
-   const [showItems ,setShowItems] = useState(false);
-
+const RestraurantCategory = ({data, showItem, setShowIndex}) => {
    const handleClick = () => {
-    setShowItems(!showItems);
+  setShowIndex();
    }
     return (
         <div className="mx-auto my-4 w-6/12 ">
@@ -16,7 +14,7 @@ const RestraurantCategory = ({data}) => {
                 <span>⬇️</span>
             </div>
             <div>
-            {showItems && <ItemList items = {data?.itemCards}/>}
+            {showItem && <ItemList items = {data?.itemCards}/>}
             </div>
         </div>
     );
