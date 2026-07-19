@@ -1,5 +1,4 @@
 import { CDN_URL } from "../utils/constants";
-import { useState } from "react";
 
 const RestaurantCard = (props) => {
     
